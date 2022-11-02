@@ -1,7 +1,6 @@
 <a href="https://terraform.io">
     <img src="https://raw.githubusercontent.com/hashicorp/terraform-website/master/public/img/logo-text.svg" alt="Terraform logo" title="Terraform" height="50" width="250" />
 </a>
-
 <a href="https://www.zscaler.com/">
     <img src="https://www.zscaler.com/themes/custom/zscaler/logo.svg" alt="Zscaler logo" title="Zscaler" height="50" width="250" />
 </a>
@@ -28,7 +27,7 @@ If there is a missing feature or a bug - [open an issue](https://github.com/zsca
 The **consul-terraform-sync** runs as a daemon that enables a **publisher-subscriber** paradigm between **Consul** and **ZIA Cloud** to support **Network Infrastructure Automation (NIA)**.
 
 <p align="left">
-<img width="800" src="./images/consul-terraform-sync-arch.png"> </a>
+<img width="800" src="https://github.com/zscaler/terraform-zia-cfw-ip-source-group-nia/blob/master/images/consul-terraform-sync-arch.png"> </a>
 </p>
 
 * consul-terraform-sync **subscribes to updates from the Consul catalog** and executes one or more automation **"tasks"** with appropriate value of *service variables* based on those updates. **consul-terraform-sync** leverages [Terraform](https://www.terraform.io/) as the underlying automation tool and utilizes the Terraform provider ecosystem to drive relevant change to the network infrastructure.
