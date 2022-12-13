@@ -45,14 +45,14 @@ Please refer to this [link](https://www.consul.io/docs/nia/installation/install)
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | >=3.2.0 |
-| <a name="requirement_zia"></a> [zia](#requirement\_zia) | >=2.2.3 |
+| <a name="requirement_zia"></a> [zia](#requirement\_zia) | >=2.3.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_null"></a> [null](#provider\_null) | >=3.2.0 |
-| <a name="provider_zia"></a> [zia](#provider\_zia) | >=2.2.3 |
+| <a name="provider_zia"></a> [zia](#provider\_zia) | >=2.3.1 |
 
 ## Modules
 
@@ -74,9 +74,7 @@ No modules.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_null_resource_activation"></a> [null\_resource\_activation](#output\_null\_resource\_activation) | Null resource output from activation script |
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Compatibility
