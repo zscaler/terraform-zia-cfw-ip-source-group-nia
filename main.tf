@@ -16,11 +16,11 @@ resource "null_resource" "activation" {
     version = local.timestamp
   }
   provisioner "local-exec" {
-    command = "pwd"
+    command = "/bin/sh -c chmod +x ziaActivator.sh"
   }
-  # provisioner "local-exec" {
-  #   command = "/bin/sh activation.sh"
-  # }
+  provisioner "local-exec" {
+    command = "/bin/sh -c ziaActivator.sh"
+  }
 }
 
 locals {
