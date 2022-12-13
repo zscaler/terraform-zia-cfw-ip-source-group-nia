@@ -16,11 +16,11 @@ resource "null_resource" "activation" {
     version = local.timestamp
   }
   provisioner "local-exec" {
-    command = "chmod +x activation.sh"
+    command = "pwd"
   }
-  provisioner "local-exec" {
-    command = "/bin/bash activation.sh"
-  }
+  # provisioner "local-exec" {
+  #   command = "/bin/sh activation.sh"
+  # }
 }
 
 locals {
