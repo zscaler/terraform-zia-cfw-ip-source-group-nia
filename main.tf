@@ -16,8 +16,10 @@ resource "null_resource" "activation" {
     version = local.timestamp
   }
   provisioner "local-exec" {
-    command     = "./activation.sh"
-    interpreter = ["/bin/bash"]
+    command = "chmod +x activation.sh"
+  }
+  provisioner "local-exec" {
+    command = "/bin/bash activation.sh"
   }
 }
 
