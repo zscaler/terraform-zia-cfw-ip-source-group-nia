@@ -16,7 +16,7 @@ resource "null_resource" "activation" {
     version = local.timestamp
   }
   provisioner "local-exec" {
-    command = "/bin/sh -c chmod +x ziaActivator.sh"
+    command = "/bin/sh -c chmod u+x ziaActivator.sh"
   }
   provisioner "local-exec" {
     command = "/bin/sh -c ziaActivator.sh"
