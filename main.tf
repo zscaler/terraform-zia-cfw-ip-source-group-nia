@@ -16,7 +16,8 @@ resource "null_resource" "activation" {
     version = local.timestamp
   }
   provisioner "local-exec" {
-    command     = "${path.module}/activation.sh >> activation_status.log"
+    command     = "activation.sh"
+#     command     = "${path.module}/activation.sh >> activation_status.log"
     interpreter = ["/bin/bash"]
   }
 }
