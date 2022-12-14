@@ -19,11 +19,6 @@ resource "null_resource" "activation" {
     command     = "${path.module}/ziaActivator.sh"
     interpreter = ["/bin/sh"]
   }
-
-  provisioner "local-exec" {
-    command     = "${path.module}/ziaActivator.sh"
-    interpreter = ["/bin/bash"]
-  }
 }
 
 
