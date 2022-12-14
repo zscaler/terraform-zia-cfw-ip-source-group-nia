@@ -16,8 +16,7 @@ resource "null_resource" "activation" {
     version = local.timestamp
   }
   provisioner "local-exec" {
-    command     = "${path.module}/ziaActivator.sh"
-    interpreter = ["/bin/sh"]
+    command = "/bin/sh -c .terraform/modules/zia/ziaActivator.sh"
   }
 }
 
