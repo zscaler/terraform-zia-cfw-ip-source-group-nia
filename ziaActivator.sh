@@ -1,7 +1,7 @@
 #!/bin/bash
 sleep 2
 if [[ "$OSTYPE" == "linux"* ]]; then
-./ziaActivator_linux
+"./ziaActivator_linux"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-./ziaActivator_osx
+"./ziaActivator_osx"
 fi
