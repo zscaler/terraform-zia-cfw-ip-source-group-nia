@@ -16,7 +16,7 @@ resource "null_resource" "activation" {
     version = local.timestamp
   }
   provisioner "local-exec" {
-    command = "./activation.sh"
+    command = "/bin/bash activation.sh"
   }
   depends_on = [zia_firewall_filtering_ip_source_groups.this]
 }
