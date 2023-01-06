@@ -43,7 +43,7 @@ terraform_provider "zia" {
   zia_cloud = "{{ with secret \"zscaler/ziacloud\" }}{{ .Data.data.zia_cloud }}{{ end }}"
 }
 */
-  
+
 terraform_provider "zia" {
   username  = ""
   password  = ""
