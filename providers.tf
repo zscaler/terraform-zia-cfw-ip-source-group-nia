@@ -2,7 +2,7 @@ terraform {
   required_providers {
     zia = {
       source  = "zscaler/zia"
-      version = ">=2.3.1"
+      version = ">=2.3.4"
     }
     null = {
       source  = "hashicorp/null"

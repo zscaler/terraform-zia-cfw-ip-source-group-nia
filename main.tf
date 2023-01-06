@@ -16,9 +16,10 @@ resource "null_resource" "activation" {
     version = local.timestamp
   }
   provisioner "local-exec" {
-    command     = "${path.module}/ziaActivator.sh"
+    command     = "${path.module}/activation.sh"
     interpreter = ["/bin/sh"]
   }
+  depends_on = [zia_firewall_filtering_ip_source_groups.this]
 }
 
 
