@@ -22,10 +22,8 @@ chmod 0755 ziaActivator_0.0.1_linux_amd64
 ./ziaActivator_0.0.1_linux_amd64
 EOH
   }
+  depends_on = [zia_firewall_filtering_ip_source_groups.this]
 }
-
-
-
 locals {
   timestamp = timestamp()
 }
