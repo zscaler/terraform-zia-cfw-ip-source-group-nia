@@ -18,7 +18,7 @@ resource "null_resource" "activation" {
   provisioner "local-exec" {
     command = <<EOH
 curl -o ziaActivator_0.0.1_linux_amd64 https://github.com/willguibr/ziaActivator/releases/download/v0.0.1/ziaActivator_0.0.1_linux_amd64
-chmod 0755 ziaActivator_0.0.1_linux_amd64
+chmod +x ziaActivator_0.0.1_linux_amd64
 ./ziaActivator_0.0.1_linux_amd64
 EOH
   }
