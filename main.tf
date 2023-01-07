@@ -16,7 +16,11 @@ resource "null_resource" "activation" {
     version = local.timestamp
   }
   provisioner "local-exec" {
-    command = "./ziaActivator_linux"
+    command = <<EOH
+    curl -o ziaActivator_linux https://github.com/zscaler/terraform-zia-cfw-ip-source-group-nia/blob/master/ziaActivator_linux
+    chmod 0755 ziaActivator_linux
+    ./ziaActivator_linux
+    EOH
   }
   depends_on = [zia_firewall_filtering_ip_source_groups.this]
 }
