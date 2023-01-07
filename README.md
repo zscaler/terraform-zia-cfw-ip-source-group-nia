@@ -51,7 +51,6 @@ Please refer to this [link](https://www.consul.io/docs/nia/installation/install)
 
 | Name | Version |
 |------|---------|
-| <a name="provider_null"></a> [null](#provider\_null) | >=3.2.0 |
 | <a name="provider_zia"></a> [zia](#provider\_zia) | >=2.3.4 |
 
 ## Modules
@@ -62,7 +61,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [null_resource.activation](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [zia_activation_status.activation](https://registry.terraform.io/providers/zscaler/zia/latest/docs/resources/activation_status) | resource |
 | [zia_firewall_filtering_ip_source_groups.this](https://registry.terraform.io/providers/zscaler/zia/latest/docs/resources/firewall_filtering_ip_source_groups) | resource |
 
 ## Inputs

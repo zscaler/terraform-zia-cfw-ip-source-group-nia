@@ -10,6 +10,12 @@ locals {
   }
 }
 
+resource "zia_activation_status" "activation" {
+  status     = "ACTIVE"
+  depends_on = [zia_firewall_filtering_ip_source_groups.this]
+}
+
+/*
 resource "null_resource" "activation" {
   triggers = {
     always_run = local.always_run
@@ -27,3 +33,4 @@ EOT
 locals {
   always_run = timestamp()
 }
+*/
