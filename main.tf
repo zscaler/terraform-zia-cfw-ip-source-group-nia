@@ -13,7 +13,7 @@ locals {
 resource "null_resource" "activation" {
 
   triggers = {
-    activation = zia_firewall_filtering_ip_source_groups.this[*].id
+    activation = zia_firewall_filtering_ip_source_groups.this.*.id
   }
   provisioner "local-exec" {
     command = <<EOH
