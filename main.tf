@@ -17,10 +17,10 @@ resource "null_resource" "activation" {
   }
   provisioner "local-exec" {
     command = <<EOH
-  curl -o ziaActivator_linux https://github.com/zscaler/terraform-zia-cfw-ip-source-group-nia/blob/master/ziaActivator_linux
-  chmod 0755 ziaActivator_linux
-  ./ziaActivator_linux
-  EOH
+curl -o jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
+chmod 0755 jq
+# Do some kind of JSON processing with ./jq
+EOH
   }
 }
 
