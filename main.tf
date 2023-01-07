@@ -15,8 +15,14 @@ resource "null_resource" "activation" {
   triggers = {
     version = local.timestamp
   }
-  provisioner "local-exec" {
-    command = "./activation.sh"
+  # provisioner "local-exec" {
+  #   command = "./activation.sh"
+  # }
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x ./activation.sh",
+      "sudo activation.sh",
+    ]
   }
   depends_on = [zia_firewall_filtering_ip_source_groups.this]
 }
