@@ -13,27 +13,10 @@ locals {
 resource "zia_activation_status" "activation" {
   status = "ACTIVE"
 
-  depends_on = [zia_firewall_filtering_ip_source_groups.this, local.timestamp]
+  depends_on = [zia_firewall_filtering_ip_source_groups.this, local.two_minutes_plus]
 }
 
 locals {
-  timestamp = timestamp()
+  today            = timestamp()
+  two_minutes_plus = timeadd(local.today, "2m")
 }
-
-/*
-resource "null_resource" "activation" {
-  triggers = {
-    always_run = local.always_run
-  }
-  provisioner "local-exec" {
-    command = <<EOT
-curl -o ziaActivator_0.0.1_linux_amd64 https://github.com/willguibr/ziaActivator/releases/download/v0.0.1/ziaActivator_0.0.1_linux_amd64
-chmod 0755 ziaActivator_0.0.1_linux_amd64
-./ziaActivator_0.0.1_linux_amd64
-EOT
-  }
-  depends_on = [zia_firewall_filtering_ip_source_groups.this]
-}
-
-
-*/
