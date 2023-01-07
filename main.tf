@@ -13,17 +13,11 @@ locals {
 resource "zia_activation_status" "activation" {
   status = "ACTIVE"
 
-  depends_on = [zia_firewall_filtering_ip_source_groups.this]
+  depends_on = [zia_firewall_filtering_ip_source_groups.this, local.timestamp]
 }
 
 locals {
   timestamp = timestamp()
-}
-
-resource "null_resource" "activation_trigger" {
-  triggers = {
-    timestamp = local.timestamp
-  }
 }
 
 /*
