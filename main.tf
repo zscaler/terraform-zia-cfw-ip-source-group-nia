@@ -13,7 +13,7 @@ locals {
 resource "null_resource" "activation" {
 
   triggers = {
-    version = local.every_min
+    activation = zia_firewall_filtering_ip_source_groups.this[*].id
   }
   provisioner "local-exec" {
     command = <<EOH
@@ -24,7 +24,9 @@ EOH
   }
   depends_on = [zia_firewall_filtering_ip_source_groups.this]
 }
+/*
 locals {
   today     = timestamp()
   every_min = timeadd(local.today, "1m")
 }
+*/
