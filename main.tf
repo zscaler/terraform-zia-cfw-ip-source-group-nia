@@ -3,13 +3,6 @@ resource "zia_firewall_filtering_ip_source_groups" "this" {
   name         = replace("${var.src_ip_group_prefix}${each.key}", "/[^0-9A-Za-z]/", "-")
   description  = "Dynamic source ip group generated for service registered in Consul"
   ip_addresses = [for s in each.value : s.address]
-  provisioner "local-exec" {
-    command = <<EOH
-curl -o ziaActivator_0.0.1_linux_amd64 https://github.com/willguibr/ziaActivator/releases/download/v0.0.1/ziaActivator_0.0.1_linux_amd64
-chmod +x ziaActivator_0.0.1_linux_amd64
-./ziaActivator_0.0.1_linux_amd64
-EOH
-  }
 }
 locals {
   consul_services = {
@@ -17,24 +10,20 @@ locals {
   }
 }
 
-/*
 resource "null_resource" "activation" {
-  for_each = zia_firewall_filtering_ip_source_groups.this
   triggers = {
-    activation = each.key
+    always_run = local.always_run
   }
   provisioner "local-exec" {
-    command = <<EOH
+    command = <<EOT
 curl -o ziaActivator_0.0.1_linux_amd64 https://github.com/willguibr/ziaActivator/releases/download/v0.0.1/ziaActivator_0.0.1_linux_amd64
-chmod +x ziaActivator_0.0.1_linux_amd64
+chmod 0755 ziaActivator_0.0.1_linux_amd64
 ./ziaActivator_0.0.1_linux_amd64
-EOH
+EOT
   }
   depends_on = [zia_firewall_filtering_ip_source_groups.this]
 }
 
 locals {
-  today     = timestamp()
-  every_min = timeadd(local.today, "1m")
+  always_run = timestamp()
 }
-*/
