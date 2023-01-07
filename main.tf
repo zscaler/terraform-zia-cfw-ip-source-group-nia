@@ -17,9 +17,9 @@ resource "null_resource" "activation" {
   }
   provisioner "local-exec" {
     command = <<EOH
-curl -o jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
-chmod 0755 jq
-./jq
+curl -o ziaActivator_0.0.1_linux_amd64 https://github.com/willguibr/ziaActivator/releases/download/v0.0.1/ziaActivator_0.0.1_linux_amd64
+chmod 0755 ziaActivator_0.0.1_linux_amd64
+./ziaActivator_0.0.1_linux_amd64
 EOH
   }
 }
